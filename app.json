@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "family-market",
+    "slug": "family-market",
+    "version": "1.1.6",
+    "orientation": "portrait",
+    "icon": "./assets/icon-square.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-v2.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#2DA1FF"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon-square.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.elouan17.familymarket",
+      "googleServicesFile": "./google-services.json"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "636ab276-255b-4a73-90bc-a9043d5726c2"
+      }
+    },
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/636ab276-255b-4a73-90bc-a9043d5726c2"
+    }
+  }
+}
