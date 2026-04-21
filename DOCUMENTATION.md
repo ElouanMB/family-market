@@ -25,7 +25,33 @@ Family Market est une application mobile de gestion de listes de courses collabo
 - Node.js (uniquement pour la phase de build).
 - EAS CLI installé (`npm install -g eas-cli`) pour générer l'application.
 
-### 2. Configuration de Firebase
+### 2. Procédure de Développement et Tests
+
+Pour travailler sur le projet et visualiser les modifications en temps réel sur un appareil physique :
+
+#### Préparation
+1. **Réseau** : Assurez-vous que votre ordinateur et votre téléphone sont connectés au **même réseau Wi-Fi**.
+2. **Application** : Installez **Expo Go** depuis le Play Store (Android) ou l'App Store (iOS).
+3. **Configuration** : Créez votre fichier `.env` à la racine (voir section suivante).
+
+#### Lancement du serveur Metro
+Ouvrez un terminal à la racine du projet et lancez :
+```bash
+npm start
+```
+Ceci lancera le **Metro Bundler**. Un QR Code s'affichera dans votre terminal.
+
+#### Connexion du téléphone
+1. Ouvrez l'application **Expo Go**.
+2. **Android** : Utilisez l'option "Scan QR Code" de l'application.
+3. **iOS** : Utilisez l'application "Appareil photo" native pour scanner le QR Code.
+4. L'application va compiler le "JavaScript bundle" et se lancer sur votre téléphone.
+
+#### Astuces de Debugging
+- **Recharger** : Secouez le téléphone ou appuyez sur `r` dans le terminal pour rafraîchir l'interface.
+- **Menu Développeur** : Secouez le téléphone ou appuyez sur `m` dans le terminal pour accéder aux outils avancés (Inspecteur d'éléments, Debugger JS).
+
+### 3. Configuration de Firebase
 Pour utiliser votre propre base de données, vous devez créer un projet sur le site Firebase et activer les services suivants :
 - Firestore Database.
 - Cloud Messaging (pour les notifications).
@@ -41,17 +67,17 @@ EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=votre_sender_id
 EXPO_PUBLIC_FIREBASE_APP_ID=votre_app_id
 ```
 
-### 3. Configuration Native (Android)
+### 4. Configuration Native (Android)
 Le fichier `google-services.json` est indispensable pour lier l'application aux services natifs de Google sur Android, notamment pour le fonctionnement des notifications push via FCM (Firebase Cloud Messaging).
 - **Obtention** : Rendez-vous dans la console Firebase, ajoutez une application Android à votre projet, et téléchargez le fichier généré.
 - **Utilisation** : À placer directement à la racine du dossier `family-market/`.
 
-### 4. Clés Admin SDK
+### 5. Clés Admin SDK
 Le fichier de type `firebase-adminsdk-*.json` donne un accès privilégié à l'ensemble des services Firebase. Il est principalement utilisé si vous souhaitez exécuter des scripts de maintenance ou des fonctions d'administration personnalisées depuis un environnement sécurisé (serveur ou CLI).
 - **Obtention** : Console Firebase > Paramètres du projet > Comptes de service > Générer une nouvelle clé privée.
 - **Utilisation** : À conserver à la racine du projet pour vos outils d'administration.
 
-### 5. Génération et Installation (Production)
+### 6. Génération et Installation (Production)
 Pour utiliser l'application de manière permanente sur un téléphone Android (sans passer par un outil de développement), vous devez générer un fichier APK :
 
 1. Connectez-vous à votre compte Expo : `npx eas login`
